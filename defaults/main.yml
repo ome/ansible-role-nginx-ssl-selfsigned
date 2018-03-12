@@ -1,17 +1,26 @@
 ---
-# defaults file for roles/nginx-ssl-selfsigned
-
-# Certificate subject
-nginx_ssl_certificate_subject: "/C=UK/ST=Scotland/L=Dundee/O=OME/CN={{ ansible_fqdn }}"
-
-# Certificate validity (days)
-nginx_ssl_certificate_days: 365
+# defaults file for roles/ssl-certificates
 
 # Server path to SSL certificate
-nginx_ssl_certificate: /etc/nginx/ssl/server.crt
+ssl_certificate_path: /etc/ssl/server.crt
 
 # Server path to SSL certificate key
-nginx_ssl_certificate_key: /etc/nginx/ssl/server.key
+ssl_certificate_key_path: /etc/ssl/server.key
 
-# Systemd doesn't work inside Docker
-runningindocker: False
+# Server path to SSL combined certificate and key, set to empty to disable
+ssl_certificate_combined_path: /etc/ssl/combined.pem
+
+# Text content of the certificate
+ssl_certificate_content: ''
+
+# Text content of the certificate key
+ssl_certificate_key_content: ''
+
+# Create a self-signed certificate if necessary
+ssl_certificate_selfsigned_create: True
+
+# Certificate subject
+ssl_certificate_selfsigned_subject: "/C=UK/ST=Scotland/L=Dundee/O=OME/CN={{ ansible_fqdn }}"
+
+# Certificate validity (days)
+ssl_certificate_selfsigned_days: 365
