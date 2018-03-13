@@ -23,8 +23,7 @@
   copy:
     content: "{{ ssl_certificate_content }}"
     dest: "{{ ssl_certificate_path }}"
-    mode: 0400
-  no_log: True
+    mode: 0444
   when: not ssl_certificate_selfsigned_create
 
 - name: ssl certificate | write SSL certificate key
@@ -55,7 +54,6 @@
   slurp:
     src: "{{ ssl_certificate_path }}"
   register: _ssl_certificate_content
-  no_log: True
 
 - name: ssl certificate | read certificate key
   become: yes
