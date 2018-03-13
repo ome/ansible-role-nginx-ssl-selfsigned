@@ -35,13 +35,13 @@ Create a self-signed certificate with defaults:
       roles:
         - role: ssl-certificate
 
-Install certificates stored in Ansible vault:
+Install certificates stored locally on machine running Ansible:
 
     - hosts: all
       roles:
         - role: ssl-certificate
-          ssl_certificate_content: "{{ vault_certificate }}"
-          ssl_certificate_key_content: "{{ vault_certificate_key }}"
+          ssl_certificate_content: "{{ lookup('file', '/path/to/server.crt') }}"
+          ssl_certificate_key_content: "{{ lookup('file', '/path/to/server.key') }}"
           ssl_certificate_selfsigned_create: False
 
 
