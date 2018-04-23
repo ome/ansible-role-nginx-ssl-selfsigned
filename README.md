@@ -3,6 +3,8 @@ Nginx SSL Self-Signed
 
 Generate self-signed SSL certificates for Nginx, for internal testing.
 
+This role is now deprecated. Please us https://galaxy.ansible.com/openmicroscopy/ssl-certificate/ instead.
+
 Role Variables
 --------------
 

@@ -1,6 +1,9 @@
 galaxy_info:
   author: ome-devel@lists.openmicroscopy.org.uk
-  description: Generate self-signed SSL certificates for Nginx
+  description: >
+    Generate self-signed SSL certificates for Nginx. This role is now
+    deprecated. Please use openmicroscopy.ssl-certificate
+    (https://galaxy.ansible.com/openmicroscopy/ssl-certificate/) instead.
   company: Open Microscopy Environment
   license: BSD
   min_ansible_version: 2.1
